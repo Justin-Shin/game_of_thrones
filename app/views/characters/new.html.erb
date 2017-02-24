@@ -1,0 +1,26 @@
+<h1>A Child is Born</h1>
+<h2>What is their role?</h2>
+<%= image_tag "" %>
+<%= form_for @character do |f| %>
+<br>
+<%= f.label :name %>
+<br>
+<%= f.text_field :name %>
+<br>
+<br>
+<%= f.label :status %>
+<br>
+<%= f.text_field :status %>
+<br>
+<br>
+<%= f.label "Image URL" %>
+<br>
+<%= f.text_field :img_url %>
+<br>
+<br>
+<%= hidden_field_tag 'characterable_id', @characterable_id %>
+<%= hidden_field_tag 'characterable_type', @characterable_type %>
+
+<h1><%= @house%></h1>
+<%= f.submit "Enter" %>
+<% end %>

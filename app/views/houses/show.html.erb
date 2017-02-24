@@ -1,8 +1,8 @@
-<h2>House <%= @house.name %></h2>
+<h2>House <%= @house.name %> (<%=link_to "Update", edit_house_path(@house)%>)</h2>
 <h3>Of <%= @house.seat%> in <%= @house.region %></h3>
 <%= image_tag "#{@house.sigil}", class: "sigil" %>
 <h3>"<%= @house.words%>"</h3>
-<h2>Members</h2>
+<h2>Members (<%= link_to "+", new_character_path(characterable_type: "House", characterable_id: @house)%>)</h2>
 <%@house.characters.each do |character|%>
 <div class="character"><%= link_to character.name, character_path(character)%></div>
 <%end%>

@@ -13,19 +13,27 @@ class VassalsController < ApplicationController
   end
 
   def edit
+    @vassal = Vassal.find(params[:id])
   end
 
   def create
     @vassal = House.find(params[:house_id]).vassals.new(vassal_params)
     @vassal.noble = true
     @vassal.save
-    redirect_to vassal_path @vassal
+    redirect_to @vassal
   end
 
   def update
+    @vassal = Vassal.find(params[:id])
+    @vassal.update(vassal_params)
+    redirect_to @vassal
   end
 
   def destroy
+    @vassal = Vassal.find(params[:id])
+    @house = @vassal.house
+    @vassal.destroy
+    redirect_to @house
   end
 
   private

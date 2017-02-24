@@ -1,0 +1,22 @@
+<h2>Update the Records</h2>
+
+<%= form_for @character do |f| %>
+  <%= f.label :name %>
+  <br>
+  <%= f.text_field :name %>
+  <br>
+  <br>
+  <%= f.label :status %>
+  <br>
+  <%= f.text_field :status %>
+  <br>
+  <br>
+  <%= f.label "Image URL" %>
+  <br>
+  <%= f.text_field :img_url %>
+  <br>
+  <br>
+  <%= f.submit %>
+<% end %>
+<br>
+<%= link_to "Kill", @character, method: :delete, class: "delete" %>

@@ -1,15 +1,19 @@
 
 <% if @vassal.noble %>
-  <h2>House <%= @vassal.name %></h2>
+  <h2>House <%= @vassal.name %> (<%=link_to "Update", edit_vassal_path(@vassal)%>)</h2>
   <h3>Of <%= @vassal.seat%> in <%= @vassal.region %></h3>
   <%= image_tag "#{@vassal.sigil}", class: "sigil" %>
   <h3>"<%= @vassal.words%>"</h3>
   <h3>Sworn fealty to <%= link_to "House #{@vassal.house.name}", house_path(@vassal.house) %></h3>
+
 <% else %>
-<h2>Members</h2>
-  <h2><%= @vassal.name %></h2>
+  <h2><%= @vassal.name %> (<%=link_to "Update", edit_vassal_path(@vassal)%>)</h2>
   <%= image_tag "#{@vassal.sigil}", class: "sigil" %>
+
 <% end %>
-<%@vassal.characters.each do |character|%>
-<div class="character"><%= link_to character.name, character_path(character)%></div>
-<%end%>
+
+<h2>Members (<%= link_to "+", new_character_path(characterable_type: "Vassal", characterable_id: @vassal )%>)</h2>
+
+<% @vassal.characters.each do |character| %>
+  <div class="character"><%= link_to character.name, character_path(character)%></div>
+<% end %>

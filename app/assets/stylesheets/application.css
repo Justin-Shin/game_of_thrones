@@ -13,3 +13,42 @@
  *= require_tree .
  *= require_self
  */
+
+ /* assets/stylesheets */
+ @font-face {
+   font-family: "thrones";
+   src: url('game_of_thrones.ttf') format("truetype");
+ }
+* {
+  font-family: thrones;
+}
+body {
+  margin:0 auto;
+  font-family: thrones;
+}
+header {
+  margin: 0 auto;
+  background-color:black;
+  width:100vw;
+  height:30vh;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+header > img {
+  height: 100%;
+}
+
+.nav {
+  background-color: yellow;
+  display:flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 10vh;
+  margin:0;
+  list-style-type: none;
+
+}
+li {
+  width:10%;
+}

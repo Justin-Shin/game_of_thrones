@@ -1,4 +1,4 @@
-<h2><%= @character.name %></h2>
+<h2><%= @character.name %> (<%=link_to "Update", edit_character_path(@character)%>)</h2>
 <% if @character.characterable_type == "House" || @character.characterable.noble == true %>
 <h3>of <%= link_to "House #{@character.characterable.name}", @character.characterable_type=="House" ? house_path(@character.characterable) : vassal_path(@character.characterable) %></h3>
 <% end %>
