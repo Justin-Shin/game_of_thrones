@@ -1,0 +1,12 @@
+<h1>The Players in the Game of Thrones</h1>
+<% @characters.each do |character| %>
+  <h2><%= link_to character.name, character_path(character) %> of
+
+<%if character.characterable_type == "House"%>
+<%= link_to "House #{character.characterable.name}", house_path(character.characterable) %></h2>
+<%elsif character.characterable.noble == true%>
+<%= link_to "House #{character.characterable.name}", vassal_path(character.characterable) %></h2>
+<%else%>
+<%= link_to "#{character.characterable.name}", vassal_path(character.characterable) %></h2>
+<%end%>
+<%end%>

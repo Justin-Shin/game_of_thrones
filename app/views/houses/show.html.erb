@@ -1,0 +1,12 @@
+<h2>House <%= @house.name %></h2>
+<h3>Of <%= @house.seat%> in <%= @house.region %></h3>
+<%= image_tag "#{@house.sigil}", class: "sigil" %>
+<h3>"<%= @house.words%>"</h3>
+<h2>Members</h2>
+<%@house.characters.each do |character|%>
+<div class="character"><%= link_to character.name, character_path(character)%></div>
+<%end%>
+<h2>Vassals (<%= link_to "+", new_vassal_path(house: @house) %>)</h2>
+<%@house.vassals.each do |vassal|%>
+<div class="vassal"><%= link_to "House #{vassal.name}", vassal_path(vassal)%></div>
+<%end%>

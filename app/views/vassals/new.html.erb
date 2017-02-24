@@ -1,0 +1,35 @@
+<h1>A New Noble House is on the Rise</h1>
+<h2>Swear Fealty to your Lord</h2>
+<%= image_tag "" %>
+<%= form_for @vassal do |f| %>
+<br>
+<%= f.label :name %>
+<br>
+<%= f.text_field :name %>
+<br>
+<br>
+<%= f.label "Sigil Image URL" %>
+<br>
+<%= f.text_field :sigil %>
+<br>
+<br>
+<%= f.label :words %>
+<br>
+<%= f.text_field :words %>
+<br>
+<br>
+<%= f.label :seat %>
+<br>
+<%= f.text_field :seat %>
+<br>
+<br>
+<%= f.label :region %>
+<br>
+<%= f.text_field :region %>
+<br>
+<br>
+<%= hidden_field_tag 'house_id', @house %>
+
+<h1><%= @house%></h1>
+<%= f.submit "Enter" %>
+<% end %>

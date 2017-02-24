@@ -1,0 +1,6 @@
+<h1>The Great Houses of Westeros (<%= link_to "+", new_house_path %>)</h1>
+<% @houses.each do |house| %>
+  <h2><%= link_to "House #{house.name}", house_path(house) %></h2>
+  <%= image_tag "#{house.sigil}" %>
+
+<% end %>

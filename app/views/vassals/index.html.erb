@@ -1,0 +1,11 @@
+<h1>The Noble Houses of Westeros</h1>
+<% @vassals.each do |vassal| %>
+  <%if vassal.noble%>
+    <h2><%= link_to "House #{vassal.name}", vassal_path(vassal) %></h2>
+    <%= image_tag "#{vassal.sigil}" %>
+  <% else %>
+    <h2><%= link_to "#{vassal.name}", vassal_path(vassal) %></h2>
+    <%= image_tag "#{vassal.sigil}" %>
+  <% end %>
+
+<% end %>

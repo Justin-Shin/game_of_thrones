@@ -1,0 +1,33 @@
+<h1>A New Great House is entering the Game of Thrones</h1>
+<h2>In the game of thrones, you win or you die.</h2>
+<%= image_tag "" %>
+<%= form_for @house do |f| %>
+<br>
+<%= f.label :name %>
+<br>
+<%= f.text_field :name %>
+<br>
+<br>
+<%= f.label "Sigil Image URL" %>
+<br>
+<%= f.text_field :sigil %>
+<br>
+<br>
+<%= f.label :words %>
+<br>
+<%= f.text_field :words %>
+<br>
+<br>
+<%= f.label :seat %>
+<br>
+<%= f.text_field :seat %>
+<br>
+<br>
+<%= f.label :region %>
+<br>
+<%= f.text_field :region %>
+<br>
+<br>
+
+<%= f.submit "Enter" %>
+<% end %>
